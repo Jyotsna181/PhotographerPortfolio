@@ -1,0 +1,498 @@
+/* Fonts */
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+Display&family=Poppins:wght@100;300;400;500;600&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Signika+Negative:wght@300..700&display=swap";
+/* Variables */
+/* Global */
+/* Hero section */
+/* Image gallery */
+/* Testimonials */
+/* Text */
+/* About */
+/* Slider Image */
+/* Footer */
+/* Responsive layout */
+:root {
+  --black: #000;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.2s linear;
+}
+
+body {
+  background: var(--white);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--white);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+#hero {
+  position: relative;
+  height: 100vh;
+}
+#hero .navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 2rem 10% 1rem 10%;
+  background: transparent;
+  color: var(--white);
+}
+#hero .navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+#hero .navbar .container-fluid .navbar-brand {
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 1.5rem;
+}
+#hero .navbar .container-fluid .navbar-toggler {
+  border: none;
+  background-color: transparent;
+  color: transparent;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  outline: none;
+}
+#hero .navbar .container-fluid .navbar-toggler .navbar-toggler-icon {
+  color: var(--white);
+}
+#hero .navbar .container-fluid .navbar-nav {
+  margin-left: auto;
+  justify-content: space-around;
+}
+#hero .navbar .container-fluid .navbar-nav .nav-item {
+  text-transform: uppercase;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 0.8rem;
+}
+#hero .navbar .container-fluid .navbar-nav .nav-item a {
+  color: var(--white);
+  text-decoration: none;
+}
+#hero .navbar .container-fluid .navbar-nav .nav-item a:hover {
+  color: var(--black);
+  transform: scale(1.1);
+}
+#hero .navbar.fixed {
+  position: fixed;
+  background: var(--white);
+}
+#hero .navbar.fixed .container-fluid .navbar-brand {
+  color: var(--black);
+}
+#hero .navbar.fixed .container-fluid .navbar-nav .nav-item a {
+  color: var(--black);
+}
+#hero .hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#hero .hero-content .carousel {
+  position: relative;
+  width: 100%;
+}
+#hero .hero-content .carousel .carousel-inner .carousel-item {
+  transition: opacity 1.5s ease-in-out;
+  opacity: 1;
+}
+#hero .hero-content .carousel .carousel-inner .carousel-item img {
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+#hero .hero-content .carousel .carousel-inner .carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+#hero .hero-content .carousel .carousel-inner .carousel-item .carousel-caption h1 {
+  position: absolute;
+  top: -470px;
+  left: -60px;
+  font-family: "Vollkorn", serif;
+  display: block;
+  text-align: left;
+  width: 35rem;
+  font-size: 3.1rem;
+  line-height: 4.5rem;
+}
+#hero .hero-content .carousel .carousel-inner .carousel-item .carousel-caption p {
+  position: absolute;
+  bottom: 5rem;
+  right: 0;
+  text-align: right;
+}
+#hero .hero-content .carousel .carousel-inner .carousel-item .carousel-caption button {
+  position: absolute;
+  left: 0;
+  bottom: 6rem;
+}
+#hero .hero-content .carousel .carousel-inner .carousel-item.active {
+  opacity: 1;
+}
+#hero .hero-content .carousel .carousel-inner hr {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3rem;
+  width: 80%;
+  height: 4px;
+  color: var(--white);
+  border-width: 3px;
+}
+
+.carousel-item-next.carousel-item-left {
+  opacity: 0;
+}
+
+.carousel-item-prev.carousel-item-right {
+  opacity: 0;
+}
+
+.hero-content .direction {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.hero-content .direction a {
+  margin: 0 0.5rem;
+  color: var(--white);
+  position: absolute;
+  bottom: 1rem;
+}
+.hero-content .direction span {
+  margin: 0 0.5rem;
+  color: var(--white);
+  position: absolute;
+  bottom: 1rem;
+}
+.hero-content .direction .next {
+  right: 10%;
+}
+.hero-content .direction .prev {
+  left: 10%;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4rem 20%;
+}
+#gallery .container .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+#gallery .container .row .column {
+  flex: 100%;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 4px;
+}
+#gallery .container .row .column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+#gallery .container .row .column img:hover {
+  transform: scale(1.1);
+}
+
+#testimonials {
+  margin-top: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#testimonials .content {
+  flex: 1 1 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+#testimonials .content h5 {
+  text-transform: uppercase;
+  color: #666;
+  font-size: 0.9rem;
+  white-space: 12px;
+  padding-bottom: 2rem;
+  font-family: "Signika Negative", sans-serif;
+}
+#testimonials .content p {
+  margin-top: 2rem;
+  color: #666;
+  padding-bottom: 4.5rem;
+  line-height: 1.8;
+  width: 25rem;
+}
+#testimonials .content h1 {
+  font-size: 1.8rem;
+  font-family: "Playfair Display", serif;
+}
+#testimonials .carousel {
+  flex: 1 1 100%;
+  max-width: 600px;
+}
+#testimonials .carousel .carousel-inner {
+  margin-bottom: 3rem;
+}
+#testimonials .carousel .carousel-inner .carousel-item {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+}
+#testimonials .carousel .carousel-inner .carousel-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+}
+#testimonials .carousel .test {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+#testimonials .carousel .test .next-btn {
+  color: var(--black);
+}
+#testimonials .carousel .test .prev-btn {
+  color: var(--black);
+}
+
+#text {
+  margin: 5rem auto;
+  text-align: center;
+  max-width: 60rem;
+}
+#text h2 {
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+#text p {
+  margin-top: 2rem;
+}
+
+#about {
+  padding: 5rem 10%;
+}
+#about .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+#about .row img {
+  max-width: 100%;
+  box-shadow: 10px 10px rgb(208, 210, 210);
+}
+#about .row .content {
+  position: relative;
+}
+#about .row .content h1 {
+  margin: 2rem 0 4rem;
+}
+#about .row .content a {
+  margin-top: 3rem;
+}
+#about .quote p {
+  margin: 10rem auto 2rem;
+  max-width: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  position: relative;
+}
+#about .quote p i {
+  position: absolute;
+}
+#about .quote p .fa-quote-left {
+  top: -2rem;
+  left: -1.6rem;
+}
+#about .quote p .fa-quote-right {
+  bottom: -2rem;
+  right: 7rem;
+}
+#about .quote span {
+  font-family: "Vollkorn", serif;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  width: 55rem;
+  text-transform: uppercase;
+}
+
+#slider {
+  padding-top: 4rem;
+}
+#slider .image-slider .box {
+  background: var(--white);
+  transition: 0.2s linear;
+}
+#slider .image-slider .box img {
+  height: 20rem;
+  width: 100%;
+}
+#slider .box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+#slider .box a {
+  text-decoration: none;
+  color: var(--black);
+  margin: 0 2rem;
+}
+
+#footer {
+  margin-top: 4rem;
+  padding: 2rem 10%;
+  display: block;
+  position: relative;
+}
+#footer .footer-menu {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+#footer .footer-menu a {
+  color: var(--black);
+  text-decoration: none;
+}
+#footer .footer-menu a:hover {
+  color: #333;
+  text-decoration: none;
+}
+#footer hr {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 3rem;
+  width: 80%;
+  height: 4px;
+  color: var(--black);
+  border-width: 3px;
+  padding-bottom: 2rem;
+}
+#footer .copyright {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  #hero .navbar .container-fluid .navbar-collapse {
+    top: 90%;
+    background-color: var(--black);
+  }
+  #hero .navbar.fixed .container-fluid .navbar-collapse {
+    top: 70%;
+    background-color: var(--white);
+  }
+  #gallery .container .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
+}
+@media (max-width: 768px) {
+  #hero .hero-content .carousel .carousel-inner .carousel-item .carousel-caption h1 {
+    top: -400px;
+    left: -45px;
+  }
+  #hero .hero-content .carousel .carousel-inner .carousel-item .carousel-caption p {
+    top: -90px;
+    padding-left: 2rem;
+  }
+  #hero .hero-content .carousel .carousel-inner .carousel-item .carousel-caption button {
+    position: absolute;
+    left: -45px;
+    bottom: 6rem;
+  }
+  #hero .hero-content .carousel .carousel-inner hr {
+    display: none;
+  }
+  #gallery {
+    padding: 4rem 2%;
+  }
+  #gallery .container .row {
+    padding: 0 8%;
+    grid-template-columns: 1fr;
+  }
+  #text {
+    padding: 4rem 2%;
+  }
+  #testimonials {
+    padding: 2%;
+  }
+  #about .row {
+    display: block;
+    padding: 2rem;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 75%;
+  }
+  #hero .hero-content .carousel .carousel-inner .carousel-item .carousel-caption p {
+    top: -200px;
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=style1.css.map */
